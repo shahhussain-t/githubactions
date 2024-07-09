@@ -1,0 +1,20 @@
+name: manual-workd-flow
+
+on:
+ workflow_dispatch:
+   inputs:
+     name:
+       description: Person to greet
+       default: 'World'
+       required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+
+     - name: Send Greeting
+       run: echo "hello, {{github.event.inputs.name}}"
+
+   
